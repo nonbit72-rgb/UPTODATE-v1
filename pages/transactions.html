@@ -1,0 +1,67 @@
+<div class="stat-grid" id="tx-stats" style="margin-bottom:16px;"></div>
+
+<div id="tx-list"></div>
+
+<button class="fab" id="tx-fab" aria-label="Add transaction">+</button>
+
+<div class="sheet-backdrop" id="tx-sheet-backdrop">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-header">
+      <h2 id="tx-sheet-title">Add Transaction</h2>
+      <button class="btn-ghost" id="tx-sheet-close">Close</button>
+    </div>
+    <form id="tx-form">
+      <input type="hidden" id="tx-id">
+
+      <div class="field" id="tx-field-type">
+        <label>Type</label>
+        <select id="tx-type">
+          <option value="">Choose</option>
+          <option value="Cash">Cash</option>
+          <option value="UPI">UPI</option>
+          <option value="Bank">Bank</option>
+          <option value="Paid By">Paid By</option>
+          <option value="To Get">To Get</option>
+        </select>
+        <div class="error-text">Please select a type</div>
+      </div>
+
+      <div class="field hidden" id="tx-field-person">
+        <label id="tx-person-label">Person</label>
+        <input type="text" id="tx-person" placeholder="Who?">
+        <div class="error-text">Please enter a name</div>
+      </div>
+
+      <div class="field" id="tx-field-way">
+        <label>Way</label>
+        <select id="tx-way">
+          <option value="">Choose</option>
+          <option value="Going to College">Going to College</option>
+          <option value="At College">At College</option>
+          <option value="Coming Home">Coming Home</option>
+          <option value="About College">About College</option>
+          <option value="Others">Others</option>
+        </select>
+        <div class="error-text">Please select a way</div>
+      </div>
+
+      <div class="field" id="tx-field-amount">
+        <label>Amount (₹)</label>
+        <input type="number" id="tx-amount" inputmode="decimal" step="0.01" min="0" placeholder="0.00">
+        <div class="error-text">Enter a valid amount</div>
+      </div>
+
+      <label>Description <span style="opacity:0.6;">(optional)</span></label>
+      <textarea id="tx-desc" placeholder="What was this for?"></textarea>
+
+      <div class="field" id="tx-field-datetime">
+        <label>Date &amp; time</label>
+        <input type="datetime-local" id="tx-datetime">
+        <div class="error-text">Please pick a date &amp; time</div>
+      </div>
+
+      <button type="submit" class="btn">Save Transaction</button>
+    </form>
+  </div>
+</div>

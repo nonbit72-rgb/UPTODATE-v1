@@ -1,0 +1,89 @@
+<div class="stat-grid" id="att-stats" style="margin-bottom:16px;"></div>
+
+<div class="card" id="att-breakdown-card">
+  <div class="section-title">Per-lecture breakdown</div>
+  <table class="breakdown" id="att-breakdown-table">
+    <thead><tr><th>Lecture</th><th>Present</th><th>Total</th><th>%</th></tr></thead>
+    <tbody id="att-breakdown-body"></tbody>
+  </table>
+</div>
+
+<div id="att-list"></div>
+
+<button class="fab" id="att-fab" aria-label="Add attendance">+</button>
+
+<div class="sheet-backdrop" id="att-sheet-backdrop">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-header">
+      <h2 id="att-sheet-title">Add Attendance</h2>
+      <button class="btn-ghost" id="att-sheet-close">Close</button>
+    </div>
+    <form id="att-form">
+      <input type="hidden" id="att-id">
+
+      <div class="field" id="att-field-date">
+        <label>Date</label>
+        <input type="date" id="att-date">
+        <div class="error-text">Please pick a date</div>
+      </div>
+
+      <div class="field" id="att-field-slot">
+        <label>Time</label>
+        <select id="att-slot">
+          <option value="">Choose</option>
+          <option value="custom1">Custom 1</option>
+          <option value="custom2">Custom 2</option>
+          <option value="7:15–8:15">7:15–8:15</option>
+          <option value="8:15–9:15">8:15–9:15</option>
+          <option value="9:15–10:00">9:15–10:00</option>
+          <option value="10:25–11:25">10:25–11:25</option>
+          <option value="11:35–12:35">11:35–12:35</option>
+          <option value="12:35–1:35">12:35–1:35</option>
+          <option value="1:55–2:55">1:55–2:55</option>
+        </select>
+        <div class="error-text">Please select a time</div>
+      </div>
+
+      <div class="field hidden" id="att-field-custom1">
+        <label>Start time</label>
+        <input type="time" id="att-custom1-start">
+        <div class="error-text">Please enter a start time</div>
+      </div>
+
+      <div class="field hidden" id="att-field-custom2">
+        <label>Start time</label>
+        <input type="time" id="att-custom2-start">
+        <label>End time</label>
+        <input type="time" id="att-custom2-end">
+        <div class="error-text">Please enter both times</div>
+      </div>
+
+      <div class="field" id="att-field-lecture">
+        <label>Lecture</label>
+        <select id="att-lecture"><option value="">Choose</option><option value="__custom__">Custom...</option></select>
+        <div class="error-text">Please select or enter a lecture</div>
+      </div>
+      <div class="field hidden" id="att-field-lecture-custom">
+        <input type="text" id="att-lecture-custom" placeholder="New lecture name">
+      </div>
+
+      <div class="field" id="att-field-teacher">
+        <label>Teacher</label>
+        <select id="att-teacher"><option value="">Choose</option><option value="__custom__">Custom...</option></select>
+        <div class="error-text">Please select or enter a teacher</div>
+      </div>
+      <div class="field hidden" id="att-field-teacher-custom">
+        <input type="text" id="att-teacher-custom" placeholder="New teacher name">
+      </div>
+
+      <label>Status</label>
+      <div class="radio-row" id="att-status-row">
+        <label><input type="radio" name="att-status" value="Present"><span>Present</span></label>
+        <label><input type="radio" name="att-status" value="Absent"><span>Absent</span></label>
+      </div>
+
+      <button type="submit" class="btn">Save Attendance</button>
+    </form>
+  </div>
+</div>
